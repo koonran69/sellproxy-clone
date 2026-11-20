@@ -1,0 +1,1 @@
+<a href="{{ route("admin.user.edit", [ 'id' => $user['id']]) }}">{{ $user['name'] }}</a>

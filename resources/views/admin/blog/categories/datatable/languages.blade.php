@@ -1,0 +1,45 @@
+@php
+    $translatable = ['name', 'description', 'title_seo', 'desc_seo'];
+    $isComplete = true;
+
+    foreach ($translatable as $field) {
+        if (!isset($$field['en']) || empty($$field['en'])) {
+            $isComplete = false;
+            break;
+        }
+    }
+@endphp
+
+<div class="d-flex gap-3 justify-content-center">
+    <a href="#" data-route="{{ route('admin.blog.category.edit', ['id' => $id, 'lang' => 'vi']) }}"
+        class="open-modal-form">
+        <svg class="icon text-success svg-icon-ti-ti-check" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l5 5l10 -10"></path>
+        </svg>
+    </a>
+
+    <a href="#" data-route="{{ route('admin.blog.category.edit', ['id' => $id, 'lang' => 'en']) }}"
+        class="open-modal-form">
+        @if ($isComplete)
+            <svg class="icon text-success svg-icon-ti-ti-check" xmlns="http://www.w3.org/2000/svg" width="24"
+                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M5 12l5 5l10 -10"></path>
+            </svg>
+        @else
+            <svg class="icon svg-icon-ti-ti-edit" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"></path>
+                <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
+                <path d="M16 5l3 3"></path>
+            </svg>
+        @endif
+    </a>
+
+</div>

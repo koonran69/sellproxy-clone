@@ -1,0 +1,25 @@
+<div class="col-12 col-md-3">
+    <div class="card" id="blockSubmit">
+        <div class="card-header">
+            @lang('action')
+        </div>
+        <div class="card-body p-2 d-flex justify-content-between">
+            <div class="d-flex align-items-center h-100 gap-2">
+                @adminaccessroutename('admin.user.update')
+                <button type="submit" class="btn btn-primary" title="@lang('save')" name="submitter" value="save">@lang('save')</button>
+                <button type="submit" class="btn" name="submitter" value="saveAndExit">
+                    @lang('save&exit')
+                </button>
+                @endadminaccessroutename
+            </div>
+        </div>
+    </div>
+    <div class="card mt-3">
+        <div class="card-header">
+            @lang('Ví tiền')
+        </div>
+        <div class="card-body fw-bold text-danger">
+            {{ format_price($user->balance) }}
+        </div>
+    </div>
+</div>

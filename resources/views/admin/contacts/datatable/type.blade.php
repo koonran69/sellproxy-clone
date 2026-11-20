@@ -1,0 +1,1 @@
+{{ App\Core\Enums\Voucher\VoucherType::tryFrom($type)->description() }}

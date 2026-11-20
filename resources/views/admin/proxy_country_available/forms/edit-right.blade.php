@@ -1,0 +1,16 @@
+<div class="col-12 col-md-3">
+    <div class="card" id="blockSubmit">
+        <div class="card-header">
+            @lang('action')
+        </div>
+        <div class="card-body p-2">
+            <div class="d-flex align-items-center h-100 gap-2">
+                @adminaccessroutename('admin.proxy_country_available.store')
+                <button type="submit" class="btn btn-primary" name="submitter" value="saveAndExit">
+                    @lang('save&exit')
+                </button>
+                @endadminaccessroutename
+            </div>
+        </div>
+    </div>
+</div>

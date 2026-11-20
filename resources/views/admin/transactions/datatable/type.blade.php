@@ -1,0 +1,1 @@
+{{ App\Core\Enums\Transaction\ReferenceType::from($reference_type)->description() }}

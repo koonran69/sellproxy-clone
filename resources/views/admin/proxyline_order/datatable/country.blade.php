@@ -1,0 +1,1 @@
+{{ $country['name'] }} <img src="{{ asset($country['feature_image']) }}" alt="">

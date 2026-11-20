@@ -1,0 +1,1 @@
+{{ App\Core\Enums\Deposit\Type::from($type)->description() }}

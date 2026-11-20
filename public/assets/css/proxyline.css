@@ -1,0 +1,49 @@
+.btn-outline-primary.active, .btn-outline-primary:hover{
+    background: linear-gradient(86.04deg, #ff968d 0.56%, #752df0 99.44%);
+    border-radius: 100px;
+    color: #ffffff !important;
+}
+.quantity-options .badge {
+    background: red;
+    cursor: pointer;
+    background: linear-gradient(86.04deg, #ff968d 0.56%, #752df0 99.44%);
+}
+div#advanced select {
+    padding: 6px 6px;
+}
+span.help-block.f-12 {
+    font-size: 13px;
+    color: gray;
+}
+.text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.text-dark {
+    color: rgb(23, 31, 70) !important;
+}
+.order__info{
+    color:gray;
+}
+.total-amount {
+    font-weight: bold;
+    font-size: 20px;
+}
+.modal-iplist-item {
+    padding: 8px 8px;
+    margin: 5px 0px;
+}
+
+.modal-iplist-item p {
+    margin-bottom: 0px;
+}
+
+.modal-iplist-buttons .badge-primary {
+    background: red;
+    cursor: pointer;
+    background: linear-gradient(86.04deg, #ff968d 0.56%, #752df0 99.44%);
+}
+.modal-iplist-item--hidden {
+    display: none;
+}

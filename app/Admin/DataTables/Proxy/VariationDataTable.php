@@ -1,0 +1,77 @@
+<?php
+
+namespace App\Admin\DataTables\Proxy;
+
+use App\Core\DataTables\DataTables;
+use App\Core\Enums\DefaultStatus;
+use App\Models\Variation;
+
+class VariationDataTable extends DataTables
+{
+
+    public function __construct(
+        public Variation $model
+    ) {
+    }
+
+    protected function setColumnHasSearch(): void
+    {
+        $this->columnHasSearch = ['name', 'created_at'];
+    }
+
+    protected function setColumnSearchDate(): void
+    {
+        $this->columnSearchDate = ['created_at'];
+    }
+
+    public function query()
+    {
+        $filter = ['attr_id' => $this->attr->id];
+        return $this->model->makeQuery($filter);
+    }
+
+    protected function setEditColumns(): void
+    {
+        $this->editColumns = [
+            'created_at' => '{{ date(config("core.format.date"), strtotime($created_at)) }}'
+        ];
+    }
+
+    protected function setAddColumns(): void
+    {
+        $this->addColumns = [
+            'action' => 'admin.proxies.variations.datatable.action',
+        ];
+    }
+
+    protected function setRawColumns(): void
+    {
+    $this->rawColumns = ['action', 'variations'];
+    }
+
+    protected function setConfigColumns(): void
+    {
+        $this->configColumns = [
+            'name' => [
+                'title' => 'name',
+                'orderable' => false,
+            ],
+            'slug' => [
+                'title' => 'slug',
+                'orderable' => false,
+            ],
+            'created_at' => [
+                'title' => 'createdAt',
+                'orderable' => false,
+                'visible' => false,
+            ],
+            'action' => [
+                'title' => 'action',
+                'orderable' => false,
+                'exportable' => false,
+                'printable' => false,
+                'addClass' => 'text-center'
+            ],
+        ];
+    }
+}

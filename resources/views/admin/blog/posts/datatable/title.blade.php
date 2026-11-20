@@ -1,0 +1,1 @@
+<div class="fw-normal">{{ $title[app()->getLocale()] ?? '' }}</div>
